@@ -1,0 +1,5 @@
+{
+  "name": "5G NR Link Budget Calculator",
+  "description": "An advanced calculator to determine the 5G NR network link budget based on various network parameters, configurations, and propagation models as per 3GPP 38.901 standards.",
+  "requestFramePermissions": []
+}
