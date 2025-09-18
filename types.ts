@@ -23,7 +23,9 @@ export enum CoverageType {
     Indoor = 'Indoor'
 }
 
-export interface CalculatorInputs {
+// --- 5G NR Specific ---
+
+export interface NrCalculatorInputs {
   cellRadius: number;
   frequency: number;
   linkDirection: LinkDirection;
@@ -32,11 +34,10 @@ export interface CalculatorInputs {
   
   // gNodeB Config
   gNodeBNoiseFigure: number;
-  gNodeBTxPower: number; // Added for DL calculation
+  gNodeBTxPower: number;
   targetSINR: number;
   gNodeBCableLoss: number;
   gNodeBAntennaGain: number;
-
   gNodeBAntennaHeight: number;
 
   // UT Config
@@ -56,4 +57,57 @@ export interface CalculatorInputs {
   interferenceMargin: number;
   coverageType: CoverageType;
   buildingPenetrationLoss: number;
+}
+
+
+// --- LTE Specific ---
+
+export enum LteBandwidth {
+    BW1_4 = 1.4,
+    BW3 = 3,
+    BW5 = 5,
+    BW10 = 10,
+    BW15 = 15,
+    BW20 = 20,
+}
+
+export enum LtePropagationModel {
+    OkumuraHataUrban = 'Okumura-Hata Urban',
+    OkumuraHataSuburban = 'Okumura-Hata Suburban',
+    COST231HataUrban = 'COST 231 Hata Urban',
+    COST231HataSuburban = 'COST 231 Hata Suburban',
+}
+
+export interface LteCalculatorInputs {
+    cellRadius: number;
+    frequency: number;
+    linkDirection: LinkDirection;
+    bandwidth: LteBandwidth;
+
+    // eNodeB Config
+    eNodeBNoiseFigure: number;
+    eNodeBTxPower: number;
+    targetSINR: number;
+    eNodeBCableLoss: number;
+    eNodeBAntennaGain: number;
+    eNodeBAntennaHeight: number;
+
+    // UE Config
+    ueTxPower: number;
+    ueCableLoss: number;
+    ueAntennaGain: number;
+    ueRxAntennaGain: number;
+    ueAntennaHeight: number;
+
+    // Propagation Model
+    propagationModel: LtePropagationModel;
+
+    // Additional Losses
+    bodyLoss: number;
+    slowFadingMargin: number;
+    foliageLoss: number;
+    rainIceMargin: number;
+    interferenceMargin: number;
+    coverageType: CoverageType;
+    buildingPenetrationLoss: number;
 }

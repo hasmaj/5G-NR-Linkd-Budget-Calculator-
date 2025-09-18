@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface InputSliderProps {
@@ -54,7 +53,7 @@ const InputSlider: React.FC<InputSliderProps> = ({ label, unit, value, onChange,
           step={step}
           value={value}
           onChange={handleChange}
-          className="w-24 bg-slate-900 border border-slate-700 rounded-md p-1 text-center focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-24 bg-slate-900/50 border border-slate-700 rounded-md p-1 text-center focus:ring-cyan-500 focus:border-cyan-500"
         />
       </div>
     </div>

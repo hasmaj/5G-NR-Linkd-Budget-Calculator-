@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface SelectProps {
@@ -30,7 +29,7 @@ const Select: React.FC<SelectProps> = ({ label, value, onChange, options, toolti
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-slate-900 border border-slate-700 rounded-md p-2 focus:ring-cyan-500 focus:border-cyan-500"
+        className="w-full bg-slate-900/50 border border-slate-700 rounded-md p-2 focus:ring-cyan-500 focus:border-cyan-500"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>

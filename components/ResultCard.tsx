@@ -1,28 +1,27 @@
-
 import React from 'react';
 
 interface ResultCardProps {
   title: string;
-  value: string | number;
-  unit?: string;
-  status?: 'Pass' | 'Fail' | 'Neutral';
+  value: string;
+  unit: string;
   description: string;
+  icon: React.ReactNode;
+  colorClass: string;
 }
 
-const ResultCard: React.FC<ResultCardProps> = ({ title, value, unit, status = 'Neutral', description }) => {
-  const statusColors = {
-    Pass: 'text-green-400 border-green-500/50',
-    Fail: 'text-red-400 border-red-500/50',
-    Neutral: 'text-cyan-400 border-cyan-500/50',
-  };
-
+const ResultCard: React.FC<ResultCardProps> = ({ title, value, unit, description, icon, colorClass }) => {
   return (
-    <div className={`bg-slate-800/60 rounded-lg p-4 shadow-lg border-t-4 ${statusColors[status]}`}>
-      <div className="text-sm text-slate-400">{title}</div>
-      <div className={`text-3xl font-bold my-1 ${statusColors[status]}`}>
-        {value} <span className="text-lg">{unit}</span>
+    <div className={`bg-slate-800/50 backdrop-blur-sm border border-slate-700/80 p-4 rounded-xl shadow-lg flex items-center space-x-4`}>
+      <div className={`p-3 rounded-full bg-slate-900/50 border border-slate-700`}>
+        {icon}
       </div>
-      <div className="text-xs text-slate-500">{description}</div>
+      <div>
+        <p className="text-sm text-slate-400">{title}</p>
+        <p className={`text-2xl font-bold ${colorClass}`}>
+          {value} <span className="text-lg font-medium text-slate-400">{unit}</span>
+        </p>
+        <p className="text-xs text-slate-500">{description}</p>
+      </div>
     </div>
   );
 };

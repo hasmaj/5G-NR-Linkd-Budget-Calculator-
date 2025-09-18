@@ -1,5 +1,5 @@
 {
-  "name": "5g-nr-link-budget-calculator",
+  "name": "5g-nr-&-lte-link-budget-calculator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "2.12.7",
+    "html-to-image": "1.11.11",
+    "framer-motion": "11.2.10",
+    "@google/genai": "latest"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
